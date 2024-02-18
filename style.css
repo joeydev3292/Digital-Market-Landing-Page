@@ -1,0 +1,274 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    max-height: 1200vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* header - head class (logo, ul) */
+.head {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+/* ul & .header-left (Flex) */
+ul {
+    cursor: pointer;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+/* list (li) */
+ul li {
+    padding: 10px 20px;
+}
+
+/* link tag (a) */
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+ul li:hover {
+    border-radius: 10px;
+    border: 1px solid rgb(148, 148, 148);
+    background-color: rgb(233, 233, 233);
+    transition: .3s ease-out;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 30px;
+}
+
+.close-btn {
+    position: relative;
+    left: 89%;
+    top: 2%;
+}
+
+/* signUp button */
+.signup-btn {
+    margin-left: 20px;
+    text-decoration: none;
+    background-color: #ffab3c;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    /* transition-duration: 350ms;
+    transition-property: background-color, transform;
+    transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.96); */
+
+    /* transition: background-color 500ms ease-out; */
+}
+
+.signup-btn:hover {
+    background-color: black;
+    color: white;
+    transition: .3s ease-in;
+}
+
+.menu-btn {
+    margin-left: 1.9rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* main - content left & content right class */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: margin .3 ease;
+}
+
+.content-left {
+    width: 20%;
+    margin-right: 60px;
+    position: relative;
+    left: 20px;
+}
+
+main h1 {
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+main h2 {
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #ff9100;
+}
+
+main p {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 25px 0;
+}
+
+/* Learn button */
+.learn-btn {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+    border: 1px solid rgb(168, 167, 167);
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.learn-btn:hover {
+    background-color: black;
+    color: white;
+    transition: .2s ease-in;
+}
+
+
+/* content-right (digital image) */
+.digital {
+    max-width: 730px;
+    position: relative;
+    left: 100px;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-left: 1.5rem;
+    padding-top: 1.7rem;
+    transition: transform .3 ease;
+}
+
+.signup-btn-right {
+    /* margin-left: 20px; */
+    text-decoration: none;
+    /* background-color: #ffab3c; */
+    color: black;
+    border: 1px grey solid;
+    border-radius: 10px;
+    margin-left: 3px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.signup-btn-right:hover {
+    background-color: rgb(117, 114, 114);
+    color: white;
+    transition: .3s ease-in;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+        margin-right: 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+        gap: 20px;
+    }
+    
+    .content-left {
+        width: 75%;
+        position: relative;
+        top: 30px;
+        left: 5px;
+    }
+    
+    main h1 {
+        font-size: 45px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    
+    main h2 {
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        color: #ff9100;
+    }
+    
+    main p {
+        font-size: 13px;
+        line-height: 18px;
+        margin: 25px 0;
+    }
+
+    .content-right {
+        display: flex;
+        position: relative;
+        z-index: -1;
+        right: 100px;
+        bottom: 20px;
+    }
+
+    .digital {
+        max-width: 380px;
+    }
+
+    .learn-btn {
+        font-size: .6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: black;
+        border: 1px solid rgb(168, 167, 167);
+        border-radius: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    
+    .learn-btn:hover {
+        background-color: black;
+        color: white;
+        transition: .2s ease-in;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+}
